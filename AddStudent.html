@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thêm học sinh</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        function AddStudent()
+        {
+            var name = window.prompt("Nhập vào tên học sinh: ");
+            if(name == null)
+            {
+                return;
+            }
+            if(name == "")
+            {
+                alert("Vui lòng nhập vào tên học sinh!");
+                AddStudent();
+                return;
+            }
+            var str = document.getElementById("listHocSinh").innerHTML;
+            str += '<li>' + name + '</li>';
+            document.getElementById("listHocSinh").innerHTML = str;
+        }
+    </script>
+</head>
+<body>
+    <div id="main">
+        <input type="button" value="Thêm học sinh" onclick="AddStudent();"/>
+        <ul id="listHocSinh">
+            <li>Nguyễn Văn A</li>
+            <li>Nguyễn Quý Hải</li>
+            <li>Trần Thị B</li>
+        </ul>
+    </div>
+</body>
+</html>

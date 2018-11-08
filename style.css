@@ -1,0 +1,39 @@
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans', monospace;
+    font-size: 20px;
+}
+
+#main
+{
+    border: 2px solid darkcyan;
+    margin: 20px auto;
+    top: 5px;
+    width: 500px;
+    min-height: 200px;
+    text-align: center;
+}
+
+#main ul
+{
+    list-style: inside;
+    list-style-type: circle;
+    margin: 5px;
+}
+
+#main input[type='button']
+{
+    border-radius: 30%;
+    margin: 3px auto;
+
+}
+
+#main ul li
+{
+    margin-left: 5px;
+    text-align: justify;
+    margin-top: 3px;
+}

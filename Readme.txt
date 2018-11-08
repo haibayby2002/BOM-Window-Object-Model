@@ -1,0 +1,1 @@
+File newWindow - for the future if neccessary: open a new window in the middle of the browser window being used in newWindow(newHeight, newWidth) function.
