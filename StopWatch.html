@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Đồng hồ điện tử</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript">
+        var min, sec, per;
+        var process;
+
+        function output()
+        {
+            var s_min = min >= 10 ? min : '0' + min;
+            var s_sec = sec >= 10 ? sec : '0' + sec;
+            var s_per = per >= 10 ? per : '0' + per;
+            document.getElementById("stopWatch").value = s_min + ":" + s_sec + ":" + s_per;
+        }
+
+        function incPer()
+        {
+            per++;
+            if(per == 100)
+            {
+                sec++;
+                per = 0;
+                if(sec == 60)
+                {
+                    sec = 0;
+                    min++;
+                }
+            }
+        }
+
+        function start()
+        {
+            stop();
+            process = window.setInterval(function(){incPer(); output();} , 10);
+        }
+
+        function stop()
+        {
+            window.clearInterval(process);
+        }
+
+        function reset()
+        {
+            min = sec = per = 0;
+            stop();
+            output();
+        }
+    </script>
+</head>
+<body onload="reset();">
+    <div class="clock">
+        <h3>My Stopwatch</h3>
+        <input type="button" value="Start" onclick="start();">
+        <input type="button" value="Pause" onclick="stop();">
+        <input type="button" value="Reset" onclick="reset();">
+        <input type="text" name="stopWatch" id="stopWatch">
+    </div>
+</body>
+</html>

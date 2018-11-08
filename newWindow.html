@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Window</title>
+
+    <script type="text/javascript">
+        var _win;
+        function newWindow(newHeight, newWidth)
+        {
+            //var newHeight = 200;
+            //var newWidth = 300;
+            var _x = window.screenLeft + ((window.outerWidth - newWidth) / 2);
+            var _y = window.screenTop + ((window.outerHeight - newHeight) / 2);
+            var val = "";
+            val += "left=" + _x;
+            val += ", top=" + _y;
+            val += ", width=" + newWidth;
+            val += ", height=" + newHeight;
+            _win = window.open("https://www.w3schools.com", "_blank", val);
+        }
+
+        function closeWindow()
+        {
+            if(_win == null)
+            {
+                alert("Cửa sổ mới chưa được mở");
+                return;
+            }
+            if(_win.closed)
+            {
+                alert("Cửa sổ đã được đóng");
+                return;
+            }
+            _win.close();
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Open new Window" onclick = "newWindow(200, 300);">
+    <input type="button" value="Close the window" onclick = "closeWindow();">
+</body>
+</html>

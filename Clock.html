@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Đồng hồ điện tử</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript">
+        function initTime()
+        {
+            var d = new Date();
+            document.getElementById("myClock").value = d.toLocaleTimeString();
+        }
+
+        setInterval("initTime()", 1000);
+    </script>
+</head>
+<body onload="initTime(); initTime();">
+    <div class="clock">
+        <h3>My clock</h3>
+        <input type="text" name="myClock" id="myClock">
+    </div>
+</body>
+</html>
